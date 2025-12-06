@@ -1,11 +1,14 @@
 module Day1 (solve) where
 
-import qualified Data.Text as T
+import Data.Text qualified as T
+
+initPos :: Int
+initPos = 50
 
 solve :: T.Text -> T.Text
 solve input = do
-  let commands = T.splitOn "\n" $ T.strip input
-  let (_, wraps) = foldr advancePosAndCountWraps (0, 0 :: Int) commands
+  let commands = reverse $ T.splitOn "\n" $ T.strip input
+  let (_, wraps) = foldr advancePosAndCountWraps (initPos, 0 :: Int) commands
   T.pack $ show wraps
 
 advancePosAndCountWraps :: (Num b) => T.Text -> (Int, b) -> (Int, b)
