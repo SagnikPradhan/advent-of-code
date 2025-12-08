@@ -38,7 +38,8 @@ library
         advent-of-code-api ^>=0.2.10,
     exposed-modules:
         Shared
-        Day1
+        Day1Part1
+        Day1Part2        
 
 executable main
     import: shared-properties
@@ -54,5 +55,6 @@ test-suite tests
     import: shared-properties-tests
     type: exitcode-stdio-1.0
     main-is: Spec.hs
-    other-modules: Day1Spec
-
+    other-modules: 
+        Day1Part1Spec
+        Day1Part2Spec

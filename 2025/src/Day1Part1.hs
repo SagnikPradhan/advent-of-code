@@ -1,4 +1,4 @@
-module Day1 (solve) where
+module Day1Part1 (solve) where
 
 import Data.Text qualified as T
 

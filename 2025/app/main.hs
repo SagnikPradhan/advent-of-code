@@ -1,13 +1,15 @@
 module Main where
 
-import qualified Configuration.Dotenv as Config
-import qualified Data.Text as T
-import qualified Day1
-import qualified Shared
-import qualified System.Environment as Env
+import Configuration.Dotenv qualified as Config
+import Data.Text qualified as T
+import Day1Part1 qualified
+import Day1Part2 qualified
+import Shared qualified
+import System.Environment qualified as Env
 
 solveForDay :: Integer -> Integer -> T.Text -> T.Text
-solveForDay 1 1 v = Day1.solve v
+solveForDay 1 1 v = Day1Part1.solve v
+solveForDay 1 2 v = Day1Part2.solve v
 solveForDay _ _ _ = error "Unsupported question"
 
 main :: IO ()
@@ -21,5 +23,9 @@ main = do
   input <- Shared.getInput day
   let solution = solveForDay day part input
 
-  (_, result) <- Shared.submitAnswer day part (T.pack $ show solution)
-  print result
+  print input
+  print solution
+
+-- TODO: Fix submission code
+-- (_, result) <- Shared.submitAnswer day part (T.pack $ show solution)
+-- print result
