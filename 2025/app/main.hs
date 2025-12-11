@@ -4,12 +4,16 @@ import Configuration.Dotenv qualified as Config
 import Data.Text qualified as T
 import Day1Part1 qualified
 import Day1Part2 qualified
+import Day2Part1 qualified
+import Day2Part2 qualified
 import Shared qualified
 import System.Environment qualified as Env
 
 solveForDay :: Integer -> Integer -> T.Text -> T.Text
 solveForDay 1 1 v = Day1Part1.solve v
 solveForDay 1 2 v = Day1Part2.solve v
+solveForDay 2 1 v = Day2Part1.solve v
+solveForDay 2 2 v = Day2Part2.solve v
 solveForDay _ _ _ = error "Unsupported question"
 
 main :: IO ()

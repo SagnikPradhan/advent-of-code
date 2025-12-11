@@ -39,7 +39,9 @@ library
     exposed-modules:
         Shared
         Day1Part1
-        Day1Part2        
+        Day1Part2
+        Day2Part1
+        Day2Part2
 
 executable main
     import: shared-properties
@@ -58,3 +60,5 @@ test-suite tests
     other-modules: 
         Day1Part1Spec
         Day1Part2Spec
+        Day2Part1Spec
+        Day2Part2Spec
